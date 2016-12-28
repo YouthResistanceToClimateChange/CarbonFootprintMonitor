@@ -37,9 +37,9 @@ public class MainActivity extends AppCompatActivity {
         spinner.setAdapter(new MyAdapter(
                 toolbar.getContext(),
                 new String[]{
-                        "Section 1",
-                        "Section 2",
-                        "Section 3",
+                        "Home",
+                        "About Us",
+                        "Support Us",
                 }));
 
         spinner.setOnItemSelectedListener(new OnItemSelectedListener() {
@@ -48,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
                 // When the given dropdown item is selected, show its contents in the
                 // container view.
                 getSupportFragmentManager().beginTransaction()
+                        .setCustomAnimations(R.anim.pop_in, R.anim.pop_out)
                         .replace(R.id.container, PlaceholderFragment.newInstance(position + 1))
                         .commit();
             }
@@ -61,34 +62,11 @@ public class MainActivity extends AppCompatActivity {
       fab.setOnClickListener(new View.OnClickListener() {
           @Override
           public void onClick(View view) {
-              Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+              Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_SHORT)
                       .setAction("Action", null).show();
           }
       });
       
-    }
-
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
     }
 
     

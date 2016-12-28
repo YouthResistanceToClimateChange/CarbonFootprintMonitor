@@ -27,12 +27,15 @@
                     android:id="@+id/spinner"
                     app:popupTheme="@style/AppTheme.PopupOverlay"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:spinnerMode="dropdown"
+                    android:dropDownWidth="fill_parent"
+                    />
         </android.support.v7.widget.Toolbar>
 
     </android.support.design.widget.AppBarLayout>
 
-    <android.support.v4.widget.NestedScrollView
+    <FrameLayout
         android:id="@+id/container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -44,7 +47,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="end|bottom"
         android:layout_margin="@dimen/fab_margin"
-        app:srcCompat="@android:drawable/presence_audio_online"
-        app:backgroundTint="@android:color/holo_orange_light" />
+        app:srcCompat="@drawable/ic_info_sign"
+         />
 
 </android.support.design.widget.CoordinatorLayout>
